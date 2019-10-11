@@ -1,0 +1,54 @@
+// Initialize express router
+let router = require('express').Router();
+let users = require('./controllers/users');
+let shops = require('./controllers/shops');
+let orders = require('./controllers/orders');
+
+// Set default API response
+router.get('/', function (req, res) 
+{
+    res.json(
+    {
+       status: 'API Its Working',
+       message: 'Love ♡♡♡!',
+    });
+});
+
+//EndPoint para leer toda la base
+router.get('/users',function(req,res)
+{
+    console.log("users");
+    users.getUsers(req,res);
+});
+
+router.post('/users',function(req,res)
+{
+    console.log("users");
+    users.setUser(req,res);
+});
+
+router.get('/shops',function(req,res)
+{
+    console.log("users");
+    shops.getShops(req,res);
+});
+
+router.post('/shops',function(req,res)
+{
+    console.log("users");
+    shops.setShop(req,res);
+});
+
+router.get('/orders',function(req,res)
+{
+    console.log("orders");
+    orders.getOrders(req,res);
+});
+
+router.post('/orders',function(req,res)
+{
+    console.log("orders");
+    orders.setOrder(req,res);
+});
+
+module.exports = router;
