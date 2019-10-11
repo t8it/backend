@@ -1,0 +1,19 @@
+{
+  "name": "t8kit.back",
+  "version": "1.0.0",
+  "description": "T8kit Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t8kit/backend.git"
+  },
+  "author": "T8kit group",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/t8kit/backend/issues"
+  },
+  "homepage": "https://github.com/t8kit/backend#readme"
+}
