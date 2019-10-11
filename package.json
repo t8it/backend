@@ -4,7 +4,8 @@
   "description": "T8kit Backend",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/t8kit/backend/issues"
   },
-  "homepage": "https://github.com/t8kit/backend#readme"
+  "homepage": "https://github.com/t8kit/backend#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
