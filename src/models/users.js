@@ -3,16 +3,17 @@ const { Schema } = mongoose;
 
 const UserSchema = new Schema ({
 
+     //    idUser: { type: ObjectId, reqired: true},     
          username: { type: String, reqired: true},
          name: { type: String, reqired: true},
-         surname: { type: String, reqired: true},
-         address: { type: String, reqired: true},
-         date: { type: String, reqired: true},
-         dni: { type: String, reqired: true},
+         surname: { type: String, reqired: false},
+         address: { type: String, reqired: false},
+         date: { type: Date, reqired: true},
+         dni: { type: String, reqired: false},
+         pass: { type: String, reqired: true},
+         status: { type: String, reqired: false},
+         typeUsers: { type: String, reqired: true},
          email: { type: String, reqired: true}
-
-
-
 })
 
 module.exports= mongoose.model('User', UserSchema);
