@@ -65,6 +65,6 @@ router.post('/products',function(req,res)
 {
     console.log("products");
     orders.setOrder(req,res);
-});
+});cofiguracioens
 
 module.exports = router;
