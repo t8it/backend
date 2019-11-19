@@ -3,10 +3,10 @@ const router = express.Router();
 
 router.get('/', (req, res) =>{
 
-    res.send('Index hello word');
+    res.send('Hello Tomás in Node :) ');
 });
 
-router.get('/about ', (req, res) =>{
+router.get('/about', (req, res) =>{
 
     res.send('Abaout');
 });

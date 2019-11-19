@@ -4,23 +4,29 @@ const { Schema } = mongoose;
 const UserSchema = new Schema ({
 
      //    idUser: { type: ObjectId, reqired: true},     
-         username: { type: String, reqired: true},
-         name: { type: String, reqired: true},
-         surname: { type: String, reqired: false},
-         address: { type: String, reqired: false},
-         date: { type: Date, reqired: true},
-         dni: { type: String, reqired: false},
+     username: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true},
+         dni: { type: String, reqired: true},
          pass: { type: String, reqired: true},
-         status: { type: String, reqired: false},
-         typeUsers: { type: String, reqired: true},
-         email: { type: String, reqired: true}
-})
+         status: { type: String, default: "Activo"},
+         typeUsers: { type: String, default: "Consumidor Final"},
+         email: { type: String, reqired: true},
+         date: { type: Date, default: Date.now}
+     },
+         {
+            timestamps: true
+        });
+
 
 module.exports= mongoose.model('User', UserSchema);
 // class User {MODULE.EXPORT
 //     username;
 //     name;
 //     surname;
+
 //     address;
 //     fecha;
 //     dni;
