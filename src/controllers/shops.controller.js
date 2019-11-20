@@ -14,6 +14,67 @@ shopsCtrl.getShops = async (req, res) => {
         });
     }
 };
+
+//funcion que devuleve todas las tiendas de la base por categoria "Farmacia"
+shopsCtrl.getShopsPharmacy = async (req, res) => {
+    try {
+        const shops = await Shop.find(
+            {category:"Farmacia"}
+        );
+        res.json(shops);
+    }
+    catch (err) {
+        res.status(400).json({
+            error: err
+        });
+    }
+};
+
+//funcion que devuleve todas las tiendas de la base por categoria "Supermercado"
+shopsCtrl.getShopsSuperMarket = async (req, res) => {
+    try {
+        const shops = await Shop.find(
+            {category:"Supermercado"}
+        );
+        res.json(shops);
+    }
+    catch (err) {
+        res.status(400).json({
+            error: err
+        });
+    }
+};
+
+//funcion que devuleve todas las tiendas de la base por categoria "Restaurant"
+shopsCtrl.getShopsRestaurant = async (req, res) => {
+    try {
+        const shops = await Shop.find(
+            {category:"Restaurant"}
+        );
+        res.json(shops);
+    }
+    catch (err) {
+        res.status(400).json({
+            error: err
+        });
+    }
+};
+
+//funcion que devuleve todas las tiendas de la base por categoria "Shopping"
+shopsCtrl.getShopsShopping = async (req, res) => {
+    try {
+        const shops = await Shop.find(
+            {category:"Shopping"}
+        );
+        res.json(shops);
+    }
+    catch (err) {
+        res.status(400).json({
+            error: err
+        });
+    }
+};
+
  
 //funcion que crea una tienda 
 shopsCtrl.createShop = async (req, res) => {
