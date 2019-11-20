@@ -22,15 +22,3 @@ const UserSchema = new Schema ({
 
 
 module.exports= mongoose.model('User', UserSchema);
-// class User {MODULE.EXPORT
-//     username;
-//     name;
-//     surname;
-
-//     address;
-//     fecha;
-//     dni;
-//     mail;
-// }
-
-// module.exports = User;
