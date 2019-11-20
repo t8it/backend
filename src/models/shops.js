@@ -1,17 +1,20 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const ShopsSchema = new Schema ({
-    //idShops: { type: ObjectId, reqired: true},
+const ShopSchema = new Schema ({
+    //idShop: { type: ObjectId, reqired: true},
+    shopname: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true},
+        idUser: { type: String, reqired: true},
+        status: { type: String,  default: "Activo"},
+        category: { type: String,  default: "Todos"},
+        email: { type: String, reqired: true}
+},
+{
+    timestamps: true
+});
 
-         idShops: { type: String, reqired: true},
-         idUser: { type: String, reqired: true},
-         name: { type: String, reqired: true},
-         address: { type: String, reqired: true},
-         item: { type: String, reqired: true},
-         status: { type: String, reqired: true},
-         date: { type: Date, reqired: true},
-         email: { type: String, reqired: true}
-})
-
-module.exports= mongoose.model('Shops', UserSchema);
+module.exports= mongoose.model('Shop', UserSchema);
