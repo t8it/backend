@@ -2,24 +2,18 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const ProductSchema = new Schema ({
-    idProduct: { type: ObjectId, reqired: true},
+    productname: {
+        type: String,
+        required: true,
+        trim: true},
     idShops: { type: ObjectId, reqired: true},
-    status: { type: String, reqired: true},
-    descrip: { type: String, reqired: true},
-    price: { type: String, reqired: true},
-    status: { type: String, reqired: true},
+    status: { type: String, default: "Activo"},
+    descrip: { type: String, default: "Falta descripción"},
+    price: { type: Integer, reqired: true},
     imagen: { type: String, reqired: true},
-    })
+    },
+    {
+        timestamps: true
+    });
 
 module.exports= mongoose.model('Product', UserSchema);
-// class User {MODULE.EXPORT
-//     username;
-//     name;
-//     surname;
-//     address;
-//     fecha;
-//     dni;
-//     mail;
-// }
-
-// module.exports = User;
