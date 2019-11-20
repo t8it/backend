@@ -10,7 +10,7 @@ const ProductSchema = new Schema ({
     status: { type: String, default: "Activo"},
     descrip: { type: String, default: "Falta descripción"},
     price: { type: Integer, reqired: true},
-    imagen: { type: String, reqired: true},
+    imagen: { type: String, reqired: true}    
     },
     {
         timestamps: true
