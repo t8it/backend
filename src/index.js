@@ -5,8 +5,10 @@ const methodOverride= require ('method-override');
 const session = require ('express-session');
 const { mongoose } = require ('./database');
 const morgan = require('morgan');
+const bodyParser = require('body-parser');
 //inicializaciones 
 const app = express();
+ 
 require ('./database');
 
 //settings toda las configuraciones
@@ -32,6 +34,15 @@ app.use(session({
     resave:true,
     saveUnitialized: true
 }));
+//Bloque de código para que habilite el cor
+//otro bloque 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-COntrol-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+})
 // global variables
 //routtes
 app.use(require('./routes/index'));

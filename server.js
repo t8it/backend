@@ -5,9 +5,21 @@ var express = require('express')
 var bodyParser = require('body-parser');
 
 var cors = require('cors');
-
+ 
 // Initialize the server express
 var app = express();
+
+//Bloque de código para que habilite el cor
+//otro bloque 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-COntrol-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+})
+
+app.use(cors())
 
 //conectar BD
 //var urlBD = 'mongodb://localhost/test';

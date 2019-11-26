@@ -4,12 +4,14 @@ const User = require('../models/users');
 
 
 //funcion que devuleve todos los usuario de la base
-userCtrl.getUsers = async (req, res) => {
+userCtrl.getUsers = async  (req, res) => {
     try {
         const users = await User.find();
         res.json(users);
     }
     catch (err) {
+        console.log('error barbara:');
+        console.log(users);
         res.status(400).json({
             error: err
         });
@@ -21,15 +23,14 @@ userCtrl.getUsers = async (req, res) => {
 userCtrl.createUser = async (req, res) => {
     try {
         
-        const { username, dni, pass, typeUsers, email } = req.body;
+        const { username, email,  pass } = req.body;
         console.log(username)
 
         const newUser = new User({ 
             username,
-             dni, 
-             pass,
-             typeUsers,
-              email
+            email,
+            pass
+          
          });
         await newUser.save();
         res.json('User created');
