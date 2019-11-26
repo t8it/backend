@@ -34,8 +34,8 @@ app.use(session({
     resave:true,
     saveUnitialized: true
 }));
-//Bloque de código para que habilite el cor
-//otro bloque 
+//Bloque de código para que habilitar CORS  
+  
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-COntrol-Allow-Request-Method');
@@ -48,6 +48,9 @@ app.use((req, res, next) => {
 app.use(require('./routes/index'));
 app.use(require('./routes/notes'));
 app.use(require('./routes/users'));
+app.use(require('./routes/orders'));
+app.use(require('./routes/products'));
+app.use(require('./routes/shops'));
 
 // archivos estaticos
 console.log(__dirname)
