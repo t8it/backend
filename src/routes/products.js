@@ -11,6 +11,7 @@ const { getProducts,
         createProduct,
         getProduct,
         deleteProduct,
+        getProductsShop,
         updateProduct
 
         } = require('../controllers/products.controller');
@@ -31,6 +32,16 @@ router.route('/productoActivo')
 router.route('/productoInactivo')
     .get(getProductsInactive);    
 
+router.route('/tiendas-farmacias')
+    .get(getProductsShop);   
+router.route('/tiendas-supermercados')
+    .get(getProductsShop);   
+router.route('/tiendas-restaurantes')
+    .get(getProductsShop);   
+router.route('/tiendas-shopping')
+    .get(getProductsShop);   
+
+ 
 
 
 module.exports = router;

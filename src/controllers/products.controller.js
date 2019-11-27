@@ -46,6 +46,21 @@ productsCtrl.getProductsInactive = async (req, res) => {
     }
 };
 
+//funcion que devuleve todos los productos de una tienda dada 
+productsCtrl.getProductsShop = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const products = await Product.find(
+            {idShops:id}
+        );
+        res.json(products);
+    }
+    catch (err) {
+        res.status(400).json({
+            error: err
+        });
+    }
+};
 
  
 //funcion que crea un PRODUCTO

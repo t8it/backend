@@ -11,10 +11,11 @@ const ShopSchema = new Schema ({
         idUser: { type: String, reqired: true},
         status: { type: String,  default: "Activo"},
         category: { type: String,  default: "Todos"},
+        photo: { type: String, reqired: true},
         email: { type: String, reqired: true}
 },
 {
     timestamps: true
 });
 
-module.exports= mongoose.model('Shop', UserSchema);
+module.exports= mongoose.model('Shop', ShopSchema);

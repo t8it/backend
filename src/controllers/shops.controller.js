@@ -80,13 +80,14 @@ shopsCtrl.getShopsShopping = async (req, res) => {
 shopsCtrl.createShop = async (req, res) => {
     try {
         
-        const { shopname, idUser, category, email } = req.body;
+        const { shopname, idUser, category, photo, email } = req.body;
         console.log(shopname)
 
         const newShop = new Shop({ 
             shopname,
             idUser, 
             category, 
+            photo,
             email      
         
         });
@@ -117,10 +118,11 @@ shopsCtrl.deleteShop = async (req, res) => {
 
 //funcion que modifica una tienda de la base
 shopsCtrl.updateShop = async (req, res) => {
-    const { shopname, idUser, category, email } = req.body;
+    const { shopname, idUser, category, photo, email } = req.body;
     await Shop.findByIdAndUpdate(req.params.id, {
         shopname,
         category,
+        photo,
         email
     });
     res.json('Shop Updated');

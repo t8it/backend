@@ -13,9 +13,9 @@ const OrderSchema = new Schema ({
          //                           descrip{type String, reqired: true,}
          //                           >, reqired: true},
          status: { type: String, default: "Sin retirar"},
-         price: { type: Integer, reqired: true},
-         cant: { type: Integer, reqired: true},
-         total: { type: Integer, reqired: true}
+         price: { type: Number, reqired: true},
+         cant: { type: Number, reqired: true},
+         total: { type: Number, reqired: true}
 
 
    
@@ -24,4 +24,4 @@ const OrderSchema = new Schema ({
     timestamps: true
 });
 
-module.exports= mongoose.model('Order', UserSchema);
+module.exports= mongoose.model('Order', OrderSchema);
