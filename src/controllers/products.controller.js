@@ -73,7 +73,7 @@ productsCtrl.createProduct = async (req, res) => {
         const newProduct  = new Product({ 
             title,
             idShops, 
-            descripy, 
+            descrip, 
             price,
             image      
         
