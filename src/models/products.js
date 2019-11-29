@@ -8,7 +8,7 @@ const ProductSchema = new Schema ({
         trim: true},
     idShops: { type: String, reqired: true},
     status: { type: String, default: "Activo"},
-    descrip: { type: String, default: "Falta descripción"},
+    descrip: { type: String, reqired: true},
     price: { type: Number, reqired: true},
     imagen: { type: String, reqired: true}    
     },

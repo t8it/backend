@@ -64,7 +64,7 @@ shopsCtrl.getShopsRestaurant = async (req, res) => {
 shopsCtrl.getShopsShopping = async (req, res) => {
     try {
         const shops = await Shop.find(
-            {category:"Shopping"}
+            {category:'Shopping'}
         );
         res.json(shops);
     }
@@ -80,7 +80,7 @@ shopsCtrl.getShopsShopping = async (req, res) => {
 shopsCtrl.createShop = async (req, res) => {
     try {
         
-        const { shopname, idUser, category, photo, email } = req.body;
+        const { shopname, idUser, category, photo, adrress, email } = req.body;
         console.log(shopname)
 
         const newShop = new Shop({ 
@@ -88,6 +88,7 @@ shopsCtrl.createShop = async (req, res) => {
             idUser, 
             category, 
             photo,
+            adrress,
             email      
         
         });

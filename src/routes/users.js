@@ -14,38 +14,16 @@ app.use(function(req, res, next) {
 const { getUsers,createUser, deleteUser, getOneUser} = require('../controllers/users.controller');
 
 //router.route =http://localhost:4000/
-router.route('/usuario')
+router.route('/User')
     .get(getUsers)
     .post(createUser);
 
-router.route('/usuario/:id')
+router.route('/User/:id')
     .get(getOneUser)
     .delete(deleteUser);
 
 module.exports = router;
 
 
-//router.get('/users/signin', (req, res) => {
-//    User.find(function(err, users){
-//       console.log(users);
-//    });
-//     res.json({
-//        username:'Api Barbara!'
-//
-//     });
-    
-//});
 
-//
-//router.get('/users/signin', (req, res) =>{//
-//
-//    res.send('Ingresando a la app ');
-//});
-
-//router.get('/users/singup', (req, res) =>{
-//
-//    res.send('Formulario de autenticacion');
-//});
-
-//module.exports= router;
 

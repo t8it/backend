@@ -12,6 +12,7 @@ const ShopSchema = new Schema ({
         status: { type: String,  default: "Activo"},
         category: { type: String,  default: "Todos"},
         photo: { type: String, reqired: true},
+        adrress: { type: String, reqired: true},
         email: { type: String, reqired: true}
 },
 {

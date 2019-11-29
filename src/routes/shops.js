@@ -17,25 +17,25 @@ const { getShops,
         } = require('../controllers/shops.controller');
 
 //router.route =http://localhost:4000/
-router.route('/tienda')
+router.route('/Shops')
     .get(getShops)
     .post(createShop);
 
-router.route('/tienda/:id')
+router.route('/Shops/:id')
     .get(getShop)
     .delete(deleteShop)
     .post(updateShop);
 
-router.route('/tiendas-farmacias')
+router.route('/ShopsPharmacy')
     .get(getShopsPharmacy); 
 
-router.route('/tiendas-supermercados')
+router.route('/ShopsSuperMarket')
     .get(getShopsSuperMarket);    
 
-router.route('/tiendas-restaurantes')
+router.route('/ShopsRestaurant')
     .get(getShopsRestaurant);    
 
-router.route('/tiendas-shopping')
+router.route('/ShopsShopping')
     .get(getShopsShopping);    
      
 
